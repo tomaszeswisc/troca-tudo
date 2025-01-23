@@ -1,0 +1,30 @@
+Lembrando que após a instalação, para que a ativação funcione corretamente, você tem que abrir o seu terminal (Prompt de comando) mais conhecido como CMD, Como Administrador, e executar estes dois comandos, um após o outro:
+
+Primeiro este:
+
+cd "\Program Files\Common Files\microsoft shared\ClickToRun"
+Depois este comando:
+
+OfficeC2rclient.exe /update user updatetoversion=16.0.13801.20266
+Na Sequência, você pode partir para a ativação do Office 2019
+
+Abra o prompt de comando (CMD), clicando no menu iniciar, e digitando CMD, em seguida clique com o botão direito, e selecione a opção de executar como Administrador.
+
+Ao abrir o prompt (Como Administrador), cole o seguinte código, e aperte Enter em seguida:
+
+(Para Office 64 Bits):
+
+cd /d %ProgramFiles%\Microsoft Office\Office16
+(Para Office 32 Bits):
+
+cd /d %ProgramFiles(x86)%\Microsoft Office\Office16
+Na sequência, cole o seguinte código e aperte Enter:
+
+for /f %x in ('dir /b ..\root\Licenses16\ProPlus2019VL*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"
+Na sequência, cole o seguinte código e aperte Enter:
+
+cscript ospp.vbs /setprt:1688
+cscript ospp.vbs /unpkey:6MWKP >nul
+cscript ospp.vbs /inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP
+cscript ospp.vbs /sethst:e8.us.to
+cscript ospp.vbs /act
